@@ -38,57 +38,29 @@
                         >;
                 };
 
-                lower_layer {
-//         .--------------------------------------------------------------------.          .---------------------------------------------------------------------.
-//         |       ~      |    1    |   2    |     3     |    4    |     5      |          |     6      |    7    |     8     |    9    |    0     |     -       |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |     CTRL     |    !    |   @    |     #     |    $    |     %      |          |     ^      |    &    |     *     |    (    |    )     |     +       |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |     SHIFT    |         |        |           |         |            |          |            |         |           |    |    |    =     |     \       |
-//         '---------------------------------+-----------+---------+------------+          |------------+---------+-----------+----------------------------------'
-//                                           | ESC | CMD |         | SPC | SHFT |          | ENT | SHFT |   ADJ   |    DEL    |
-//                                           '-----------+---------+------------'          '------------+---------+-----------'
+                                lower_layer {
                         bindings = <
-  &none     &kp GRAVE     &kp N1     &kp N2   &kp N3        &kp N4     &kp N5              &kp N6      &kp N7     &kp N8        &kp N9     &kp N0     &kp MINUS           &none
-            &kp LCTRL     &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT           &kp CARET   &kp AMPS   &kp STAR      &kp LPAR   &kp RPAR   &mt RCTRL PLUS
-            &kp LSHFT     &none      &none    &none         &none      &none               &none       &none      &none         &kp PIPE   &kp F11    &mt RALT BSLH
-                                              &kp GUI       &trans     &kp SPACE           &kp RET     &mo ADJ    &kp DEL 
+  &none   &mt LGUI F1      &kp F2     &kp F3   &kp F4        &kp F5     &kp F6      &kp F7      &kp F8     &kp F9        &kp F10    &kp F11    &kp F12           &none
+          &mt LCTRL PLUS   &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT   &kp CARET   &kp AMPS   &kp STAR      &kp LPAR   &kp RPAR   &mt RCTRL MINUS
+          &mt LALT EQUAL   &kp N1     &kp N2   &kp N3        &kp N4     &kp N5      &kp N6      &kp N7     &kp N8        &kp N9     &kp N0     &kp RALT
+                                               &lt ADJ TAB   &trans     &trans      &trans      &trans     &lt ADJ DEL
                         >;
                 };
 
                 raise_layer {
-//         .--------------------------------------------------------------------.          .---------------------------------------------------------------------.
-//         |      ~       |         |    7   |     8     |    9    |      -     |          |    PREV    |   P/P   |    NEXT   |         |          |     HOME    |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |     CTRL     |    *    |    4   |     5     |    6    |      +     |          |    LEFT    |  DOWN   |    UP     |  RIGHT  |   PSCRN  |             |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |     SHIFT    |    0    |    1   |     2     |    3    |      .     |          |    V_DN    |  MUTE   |    V_UP   |         |          |     END     |
-//         '---------------------------------+-----------+---------+------------+          |------------+---------+-----------+----------------------------------'
-//                                           | ESC | CMD |   ADJ   | SPC | SHFT |          | ENT | SHFT |         |   BCSPC   |
-//                                           '-----------+---------+------------'          '------------+---------+-----------'
                         bindings = <
-  &none     &kp GRAVE     &none             &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS      &kp C_PREV     &kp C_PP      &kp C_NEXT       &none       &none       &kp HOME   &none
-            &kp LCTRL     &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS       &kp LEFT       &kp DOWN      &kp UP           &kp RIGHT   &kp PSCRN   &none
-            &kp LSHFT     &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT        &kp C_VOL_DN   &kp C_MUTE    &kp C_VOL_UP     &none       &none       &kp END 
-                                                        &kp GUI     &mo ADJ     &kp SPACE         &kp RET        &trans        &kp BSPC
+  &none   &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &kp C_VOL_UP   &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK           &none
+          &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &kp C_MUTE     &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
+          &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
+                                                          &trans      &trans      &lt ADJ RET    &lt ADJ ESC    &trans     &trans
                         >;
                 };
-
                 adjust_layer {
-//         .--------------------------------------------------------------------.          .---------------------------------------------------------------------.
-//         |      F1      |    F2   |   F3   |    F4     |   F5    |    F6      |          |     F7     |   F8    |    F9     |   F10   |   F11    |     F12     |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |    BTCLEAR   |    B0   |   B1   |    B2     |   B3    |    B4      |          |     B4     |   B3    |    B2     |   B1    |   B0     |   BTCLEAR   |
-//         |--------------+---------+--------+-----------+---------+------------|          |------------+---------+-----------+---------+----------+-------------|
-//         |     RESET    |         |        |           |         |   BOOT     |          |    BOOT    |         |           |         |          |    RESET    |
-//         '---------------------------------+-----------+---------+------------+          |------------+---------+-----------+----------------------------------'
-//                                           |           |         |            |          |            |         |           |
-//                                           '-----------+---------+------------'          '------------+---------+-----------'
                         bindings = <
-  &none   &kp F1        &kp F2         &kp F3         &kp F4         &kp F5         &kp F6              &kp F7         &kp F8         &kp F9         &kp F10        &kp F11        &kp F12           &none
-          &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4        &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
-          &reset        &none          &none          &none          &none          &bootloader         &bootloader    &none          &none          &none          &none          &reset
-                                                      &none          &trans         &none               &none          &trans         &none 
+  &none   &bootloader   &none          &none          &none          &none          &none          &none          &none          &none          &none          &none          &bootloader   &none
+          &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
+          &reset        &none          &none          &none          &none          &none          &none          &none          &none          &none          &none          &reset
+                                                      &trans         &none          &trans         &none          &trans         &trans
                         >;
                 };
         };
